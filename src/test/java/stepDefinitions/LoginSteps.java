@@ -28,9 +28,9 @@ public class LoginSteps {
         loginPage.clickLogin();
     }
 
-    @Then("user should be navigated to the dashboard")
-    public void user_should_be_navigated_to_the_dashboard() {
+    @Then("user should be navigated to the My Account screen")
+    public void user_should_be_navigated_to_the_myAccount() {
         dashboardPage = new DashboardPage(DriverManager.getDriver());
-        Assert.assertTrue(dashboardPage.isUserLoggedIn(), "User is not on Dashboard");
+        Assert.assertTrue(dashboardPage.verifyMyAccountDisplayed(), "User is not on My Account screen");
     }
 }

@@ -4,4 +4,4 @@ Feature: Login functionality
     Given user is on the login page
     When user enters valid username and password
     And clicks on login button
-    Then user should be navigated to the dashboard
+    Then user should be navigated to the My Account screen
