@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.*;
 import org.testng.Assert;
 import pages.DashboardPage;
@@ -32,5 +33,25 @@ public class LoginSteps {
     public void user_should_be_navigated_to_the_myAccount() {
         dashboardPage = new DashboardPage(DriverManager.getDriver());
         Assert.assertTrue(dashboardPage.verifyMyAccountDisplayed(), "User is not on My Account screen");
+    }
+
+    @Then("user verifies fields username and password")
+    public void userVerifiesFieldsUsernameAndPassword() {
+        loginPage.verifyFields();
+    }
+
+    @And("user verifies forgotten password should be displayed")
+    public void userVerifiesForgottenPasswordShouldBeDisplayed() {
+        loginPage.verifyForgottenPasswordDisplayed();
+    }
+
+    @Then("user verifies Sign In header displayed")
+    public void userVerifiesSignInHeaderDisplayed() {
+        loginPage.verifySignInHeaderDisplayed();
+    }
+
+    @And("user verifies New Customer header displayed")
+    public void userVerifiesNewCustomerHeaderDisplayed() {
+        loginPage.verifyNewCustomerHeaderDisplayed();
     }
 }
