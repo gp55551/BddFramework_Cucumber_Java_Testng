@@ -37,14 +37,15 @@ public class LoginPage {
     }
 
     public void enterUsername(String username) {
-        driver.findElement(usernameField).sendKeys(username);
+        sendKeys(driver,usernameField,username);
     }
 
     public void enterPassword(String password) {
-        driver.findElement(passwordField).sendKeys(password);
+        sendKeys(driver,passwordField,password);
+
     }
 
     public void clickLogin() {
-        driver.findElement(loginBtn).click();
+        click(driver,loginBtn);
     }
 }
