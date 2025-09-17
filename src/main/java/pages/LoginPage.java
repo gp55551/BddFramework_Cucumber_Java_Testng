@@ -14,6 +14,7 @@ public class LoginPage {
     private final By loginBtn = By.xpath("//input[@value='Login']");
     private final By forgottenPassword = By.xpath("//*[text()='Forgotten Password']");
     private final By newCustomerHeader = By.xpath("//h2[contains(text(),'New Customer')]");
+    private final By continueButton = By.xpath("//a[contains(text(),'Continue')]");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -47,5 +48,9 @@ public class LoginPage {
 
     public void clickLogin() {
         click(driver,loginBtn);
+    }
+
+    public void clickContinue() {
+        click(driver,continueButton);
     }
 }

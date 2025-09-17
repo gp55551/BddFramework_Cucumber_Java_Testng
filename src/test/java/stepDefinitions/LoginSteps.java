@@ -1,6 +1,5 @@
 package stepDefinitions;
 
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.*;
 import org.testng.Assert;
 import pages.DashboardPage;
