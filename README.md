@@ -15,5 +15,5 @@
 <img width="1900" height="950" alt="image" src="https://github.com/user-attachments/assets/2127a6e7-84aa-41fa-a049-ae30f5bb23e2" />
 
 
-## For Setup,
+## Refer for Setup,
 https://automationqahub.com/how-to-add-extent-report-in-selenium-cucumber-framework/
