@@ -23,12 +23,12 @@ public class LoginSteps {
         loginPage.enterPassword(Base64Class.decryptPassword(ConfigReader.getProperty("password")));
     }
 
-    @When("clicks on login button")
+    @And("clicks on login button")
     public void clicks_on_login_button() {
         loginPage.clickLogin();
     }
 
-    @Then("user should be navigated to the My Account screen")
+    @And("user should be navigated to the My Account screen")
     public void user_should_be_navigated_to_the_myAccount() {
         dashboardPage = new DashboardPage(DriverManager.getDriver());
         Assert.assertTrue(dashboardPage.verifyMyAccountDisplayed(), "User is not on My Account screen");

@@ -2,7 +2,6 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import pages.SearchPage;
 import utils.DriverManager;
 
@@ -15,7 +14,7 @@ public class SearchSteps {
         searchPage.verifySearchFieldAndButton();
     }
 
-    @When("user search iphone in the search field and clicks search button")
+    @And("user search iphone in the search field and clicks search button")
     public void userSearchIphoneInTheSearchFieldCLickSearchButton() {
         searchPage = new SearchPage(DriverManager.getDriver());
         searchPage.searchProduct("iPhone");
@@ -40,5 +39,30 @@ public class SearchSteps {
     @And("user verifies Exchange Button is displayed")
     public void userVerifiesExchangeButtonIsDisplayed() {
         searchPage.verifyExchangeButtonDisplayed();
+    }
+
+    @And("user clicks heart button")
+    public void userClicksHeartButton() {
+       searchPage.clickHeartButton();
+    }
+
+    @Then("user verifies wishlist Success message")
+    public void userVerifiesWishlistSuccessMessage() {
+        searchPage.verifySuccessMessageDisplayed();
+    }
+
+    @And("user navigates to wishlist")
+    public void userNavigatesToWishlist() {
+        searchPage.clickWishlistLink();
+    }
+
+    @And("user verifies Wishlist header")
+    public void userVerifiesWishlistHeader() {
+        searchPage.verifyWishlistHeaderDisplayed();
+    }
+
+    @And("user verifies iphone is in the list")
+    public void userVerifiesIphoneIsInTheList() {
+        searchPage.verifyProductDisplayedInList("iPhone");
     }
 }

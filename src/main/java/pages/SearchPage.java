@@ -11,10 +11,13 @@ public class SearchPage {
 
     private final By firstLink = By.xpath("//h4/a[1]");
     private final By addToCartButton = By.xpath("//*[text()='Add to Cart']");
-    private final By heartButton = By.xpath("//*[@class='fa fa-heart']");
+    private final By heartButton = By.xpath("//button/*[@class='fa fa-heart']");
     private final By exchangeButton = By.xpath("//*[@class='fa fa-exchange']");
     private final By searchField = By.xpath("//*[@name='search']");
     private final By searchButton = By.xpath("//*[@name='search']/following::button[1]");
+    private final By wishlistSuccessMessage = By.xpath("//*[text()=' Success: You have added ']");
+    private final By wishlistLink = By.xpath("//a[text()='wish list']");
+    private final By myWishlistHeader = By.xpath("//h2[text()='My Wish List']");
 
     public SearchPage(WebDriver driver) {
         this.driver = driver;
@@ -50,5 +53,31 @@ public class SearchPage {
     public void verifyExchangeButtonDisplayed()
     {
         verifyElementDisplayed(driver, exchangeButton);
+    }
+
+    public void clickHeartButton()
+    {
+        click(driver, heartButton);
+    }
+
+    public void verifySuccessMessageDisplayed()
+    {
+        verifyElementDisplayed(driver, wishlistSuccessMessage);
+    }
+
+    public void clickWishlistLink()
+    {
+        waitUntilElementClickable(driver, wishlistLink);
+        click(driver, wishlistLink);
+    }
+
+    public void verifyWishlistHeaderDisplayed()
+    {
+        verifyElementDisplayed(driver, myWishlistHeader);
+    }
+
+    public void verifyProductDisplayedInList(String text)
+    {
+        verifyElementDisplayed(driver, By.xpath("(//a[text()='"+text+"'])[2]"));
     }
 }
