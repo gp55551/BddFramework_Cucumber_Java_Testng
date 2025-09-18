@@ -4,7 +4,6 @@ import io.cucumber.java.en.*;
 import org.testng.Assert;
 import pages.DashboardPage;
 import pages.LoginPage;
-import pages.SearchPage;
 import utils.Base64Class;
 import utils.ConfigReader;
 import utils.DriverManager;
@@ -12,7 +11,6 @@ import utils.DriverManager;
 public class LoginSteps {
     LoginPage loginPage;
     DashboardPage dashboardPage;
-    SearchPage searchPage;
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
@@ -54,39 +52,5 @@ public class LoginSteps {
     @And("user verifies New Customer header displayed")
     public void userVerifiesNewCustomerHeaderDisplayed() {
         loginPage.verifyNewCustomerHeaderDisplayed();
-    }
-
-    @Then("user verifies Search field displayed")
-    public void userVerifiesSearchFieldDisplayed() {
-        searchPage = new SearchPage(DriverManager.getDriver());
-        searchPage.verifySearchFieldAndButton();
-    }
-
-    @When("user search iphone in the search field and clicks search button")
-    public void userSearchIphoneInTheSearchFieldCLickSearchButton() {
-        searchPage = new SearchPage(DriverManager.getDriver());
-        searchPage.searchProduct("iPhone");
-    }
-
-
-    @Then("user verifies product iphone is displayed")
-    public void userVerifiesProductIphoneIsDisplayed() {
-        searchPage = new SearchPage(DriverManager.getDriver());
-        searchPage.verifyProductDisplayed("iPhone");
-    }
-
-    @Then("user verifies Add to cart button  is displayed")
-    public void userVerifiesAddToCartButtonIsDisplayed() {
-        searchPage.verifyAddToCartDisplayed();
-    }
-
-    @And("user verifies Heart Button is displayed")
-    public void userVerifiesHeartButtonIsDisplayed() {
-        searchPage.verifyHeartButtonDisplayed();
-    }
-
-    @And("user verifies Exchange Button is displayed")
-    public void userVerifiesExchangeButtonIsDisplayed() {
-        searchPage.verifyExchangeButtonDisplayed();
     }
 }
