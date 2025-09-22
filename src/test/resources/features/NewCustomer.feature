@@ -1,10 +1,11 @@
 Feature: New Customer functionality
-
+  @Smoke
   Scenario: new Customer Page header validation
     Given user is on the login page
     When user clicks continue button
     Then user navigates to New Customer page
 
+  @Smoke
   Scenario: new Customer field validation
     Given user is on the login page
     When user clicks continue button

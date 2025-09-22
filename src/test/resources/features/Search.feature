@@ -1,9 +1,10 @@
 Feature: Search functionality
-
+  @Smoke
   Scenario: Search field validation
     Given user is on the login page
     Then user verifies Search field displayed
 
+  @Smoke
   Scenario: Search product validation
     Given user is on the login page
     When user search iphone in the search field and clicks search button
@@ -16,6 +17,7 @@ Feature: Search functionality
     And user verifies Heart Button is displayed
     And user verifies Exchange Button is displayed
 
+  @Regression
   Scenario:  Wishlist validation
     Given user is on the login page
     When user enters valid username and password

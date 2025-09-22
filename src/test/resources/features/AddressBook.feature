@@ -1,5 +1,5 @@
 Feature: Address Book functionality
-
+  @Smoke
   Scenario: Address Book new Entry
     Given user is on the login page
     When user enters valid username and password

@@ -10,6 +10,7 @@ Feature: Login functionality
     Then user verifies fields username and password
     And user verifies forgotten password should be displayed
 
+  @Smoke
   Scenario: Successful login with valid credentials
     Given user is on the login page
     When user enters valid username and password
