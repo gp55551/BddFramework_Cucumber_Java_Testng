@@ -12,6 +12,7 @@ Feature: New Customer functionality
     And user is on the new Customer page
     Then user login page link displayed
 
+  @Regression
   Scenario: new Customer field validation
     Given user is on the login page
     When user clicks continue button

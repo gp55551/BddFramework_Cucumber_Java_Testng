@@ -1,7 +1,9 @@
 package stepDefinitions;
 
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pages.SearchPage;
 import utils.DriverManager;
 
@@ -19,6 +21,13 @@ public class SearchSteps {
         searchPage = new SearchPage(DriverManager.getDriver());
         searchPage.searchProduct("iPhone");
     }
+
+    @When("user search {string} in the search field and clicks search button")
+    public void userSearchInTheSearchFieldAndClicksSearchButton(String productName) {
+        searchPage = new SearchPage(DriverManager.getDriver());
+        searchPage.searchProduct(productName);
+    }
+
 
     @Then("user verifies product iphone is displayed")
     public void userVerifiesProductIphoneIsDisplayed() {

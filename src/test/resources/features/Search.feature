@@ -10,12 +10,15 @@ Feature: Search functionality
     When user search iphone in the search field and clicks search button
     Then user verifies product iphone is displayed
 
-  Scenario: Button validation
+  Scenario Outline: Button validation
     Given user is on the login page
-    When user search iphone in the search field and clicks search button
+    When user search "<product>" in the search field and clicks search button
     Then user verifies Add to cart button  is displayed
     And user verifies Heart Button is displayed
     And user verifies Exchange Button is displayed
+    Examples:
+      | product |
+      | iPhone  |
 
   @Regression
   Scenario:  Wishlist validation
